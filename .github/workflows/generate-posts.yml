@@ -3,7 +3,7 @@ name: Generate Posts JSON
 on:
   push:
     paths:
-      - 'post/**'      # Chạy khi có thay đổi trong thư mục /post/
+      - 'posts/**'      # Chạy khi có thay đổi trong thư mục /post/
     branches:
       - main           # Chạy trên nhánh main (hoặc nhánh bạn đang làm việc)
 
