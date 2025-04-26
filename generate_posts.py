@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 # Đường dẫn đến thư mục chứa bài viết
-posts_dir = 'post'
+posts_dir = 'posts'
 
 # List để lưu thông tin bài viết
 posts = []
