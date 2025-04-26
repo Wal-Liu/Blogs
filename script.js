@@ -1,4 +1,4 @@
-  fetch("https://wal-liu.github.io/Blogs/posts.json")
+fetch("https://wal-liu.github.io/Blogs/posts.json")
   .then(response => {
     if (!response.ok) {
       throw new Error("Không thể tải danh sách bài viết.");
@@ -16,7 +16,7 @@
       item.className = 'post-item';
       
       item.innerHTML = `
-        <a href="post/${post.filename}" target="_blank">${post.title}</a>
+        <a href="post/${encodeURIComponent(post.filename)}" target="_blank">${post.title}</a>
         <span class="date">${post.date}</span>
       `;
       
