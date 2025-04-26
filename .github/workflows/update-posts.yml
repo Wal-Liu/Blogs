@@ -1,0 +1,38 @@
+name: Update posts.json automatically
+
+on:
+  push:
+    paths:
+      - 'post/**'      # Khi có thay đổi trong thư mục post/
+      - 'gen_posts.py' # Hoặc file gen_posts.py thay đổi
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false # Disable default GITHUB_TOKEN
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies (nếu có)
+      run: pip install -r requirements.txt || echo "Không có requirements.txt cũng không sao"
+
+    - name: Run Python script to generate posts.json
+      run: python gen_posts.py
+
+    - name: Commit and Push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add posts.json
+        git commit -m "Auto-update posts.json [skip ci]" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
