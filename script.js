@@ -1,6 +1,10 @@
-// Load danh sách bài viết từ posts.json
-fetch('posts.json')
-  .then(response => response.json())
+  fetch("https://wal-liu.github.io/Blogs/posts.json")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Không thể tải danh sách bài viết.");
+    }
+    return response.json();
+  })
   .then(posts => {
     const postsList = document.getElementById('posts-list');
 
@@ -19,4 +23,6 @@ fetch('posts.json')
       postsList.appendChild(item);
     });
   })
-  .catch(error => console.error('Không thể tải danh sách bài viết:', error));
+  .catch(error => {
+    console.error(error);
+  });
