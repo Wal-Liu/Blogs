@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 
-def generate_posts_list(posts_dir='posts', output_file='posts.json'):
+def generate_posts_list(posts_dir='post', output_file='posts.json'):
     posts = []
     for filename in os.listdir(posts_dir):
         if filename.endswith('.html'):
