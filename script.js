@@ -16,7 +16,7 @@ fetch("https://wal-liu.github.io/Blogs/posts.json")
       item.className = 'post-item';
       
       item.innerHTML = `
-        <a href="post/${encodeURIComponent(post.filename)}" target="_blank">${post.title}</a>
+        <a href="posts/${encodeURIComponent(post.filename)}" target="_blank">${post.title}</a>
         <span class="date">${post.date}</span>
       `;
       
