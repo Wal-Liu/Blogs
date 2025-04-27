@@ -41,6 +41,11 @@ function renderPagination() {
   };
   pagination.appendChild(prevButton);
 
+  // Hiển thị số trang
+  const pageInfo = document.createElement('span');
+  pageInfo.textContent = ` Page ${currentPage} of ${totalPages} `;
+  pagination.appendChild(pageInfo);
+
   const nextButton = document.createElement('button');
   nextButton.textContent = 'Next';
   nextButton.disabled = currentPage === totalPages;
