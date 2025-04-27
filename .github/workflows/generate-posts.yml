@@ -1,5 +1,4 @@
 # name: Generate Posts JSON
-
 # on:
 #   push:
 #     paths:
