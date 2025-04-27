@@ -51,7 +51,7 @@ function renderPagination() {
   pagination.appendChild(nextButton);
 }
 
-fetch("https://blogs.tuongluu.id.vn/Blogs/posts.json")
+fetch("/posts.json")
   .then(response => {
     if (!response.ok) {
       throw new Error("Không thể tải danh sách bài viết.");
