@@ -79,3 +79,30 @@ footer {
   padding: 20px;
   text-align: center;
 }
+.pagination-controls {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pagination-controls button {
+  background: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background: #3498db;
+}
+
+.pagination-controls button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
